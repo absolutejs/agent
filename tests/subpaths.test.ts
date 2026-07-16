@@ -1,0 +1,32 @@
+import { expect, test } from "bun:test";
+import { A2A_PROTOCOL_VERSION } from "../src/a2a";
+import { allowAllPolicy } from "../src/actions";
+import { AGENT_CLAIM_GRANT_TYPE } from "../src/auth";
+import { conformanceCatalog } from "../src/conformance";
+import { createMemoryOperationStore } from "../src/control";
+import { ABSOLUTE_AGENT_PATH } from "../src/discovery";
+import { createMemoryAgentInboxStore } from "../src/inbox";
+import { createMcpHandler } from "../src/mcp";
+import { createMemoryAgentMemoryStore } from "../src/memory";
+import { createMemoryPolicyStore } from "../src/policy";
+import { createMemoryAgentRuntimeStore } from "../src/runtime";
+import { createMemoryAgentSandboxOperationStore } from "../src/sandbox";
+import { AGENT_ACTION_POLICY } from "../src/trust";
+import { createMemoryAgentWalletStore } from "../src/wallet";
+
+test("stable subpaths expose every agent engine", () => {
+  expect(A2A_PROTOCOL_VERSION).toBe("1.0");
+  expect(allowAllPolicy).toBeFunction();
+  expect(AGENT_CLAIM_GRANT_TYPE).toContain("agent-auth");
+  expect(conformanceCatalog.length).toBeGreaterThan(0);
+  expect(createMemoryOperationStore).toBeFunction();
+  expect(ABSOLUTE_AGENT_PATH).toContain("well-known");
+  expect(createMemoryAgentInboxStore).toBeFunction();
+	expect(createMcpHandler).toBeFunction();
+  expect(createMemoryAgentMemoryStore).toBeFunction();
+  expect(createMemoryPolicyStore).toBeFunction();
+  expect(createMemoryAgentRuntimeStore).toBeFunction();
+  expect(createMemoryAgentSandboxOperationStore).toBeFunction();
+	expect(AGENT_ACTION_POLICY.allowedPurposes).toContain("tool-output");
+  expect(createMemoryAgentWalletStore).toBeFunction();
+});
