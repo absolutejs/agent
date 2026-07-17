@@ -5,6 +5,7 @@ import { AGENT_CLAIM_GRANT_TYPE } from "../src/auth";
 import { conformanceCatalog } from "../src/conformance";
 import { createMemoryOperationStore } from "../src/control";
 import { ABSOLUTE_AGENT_PATH } from "../src/discovery";
+import { createMemoryEffectStore } from "../src/execution";
 import { createMemoryAgentInboxStore } from "../src/inbox";
 import { createMcpHandler } from "../src/mcp";
 import { createMemoryAgentMemoryStore } from "../src/memory";
@@ -21,6 +22,7 @@ test("stable subpaths expose every agent engine", () => {
   expect(conformanceCatalog.length).toBeGreaterThan(0);
   expect(createMemoryOperationStore).toBeFunction();
   expect(ABSOLUTE_AGENT_PATH).toContain("well-known");
+  expect(createMemoryEffectStore).toBeFunction();
   expect(createMemoryAgentInboxStore).toBeFunction();
 	expect(createMcpHandler).toBeFunction();
   expect(createMemoryAgentMemoryStore).toBeFunction();

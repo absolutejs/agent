@@ -5,6 +5,7 @@ export const AGENT_STACK_PACKAGES = {
   conformance: "@absolutejs/agent-conformance",
   control: "@absolutejs/agent-control",
   discovery: "@absolutejs/agent-discovery",
+  execution: "@absolutejs/execution",
   inbox: "@absolutejs/agent-inbox",
   mcp: "@absolutejs/mcp",
   memory: "@absolutejs/agent-memory",
