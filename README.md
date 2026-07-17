@@ -39,3 +39,8 @@ await assertProductionReady(stack); // fails until every production concern is w
 The package deliberately does not introduce an Absolute-only wire protocol.
 Applications expose standard MCP, A2A, OAuth, RFC 9728/RFC 8414, auth.md, and
 AuthZEN surfaces while Absolute supplies provider-neutral implementation seams.
+
+`/auth.md` is the open auth.md registration profile's conventional discovery
+route. Absolute Auth generates it from the application's authoritative OAuth
+metadata and implements the flow natively; it is not a WorkOS adapter and does
+not require a WorkOS service.
