@@ -45,3 +45,12 @@ AuthZEN surfaces while Absolute supplies provider-neutral implementation seams.
 route. Absolute Auth generates it from the application's authoritative OAuth
 metadata and implements the flow natively; it is not a WorkOS adapter and does
 not require a WorkOS service.
+
+## One authenticated delegation
+
+`createAuthAgencyDelegationAuthority()` bridges the delegation already verified
+by Absolute Auth directly into Agency. Put an
+`authAgencyAuthorizationDetail()` in the Auth grant to bind its audience,
+canonical actions, effects, resource types, and optional resource IDs. Agency
+then re-reads that same grant before an action request, lease, and execution;
+there is no second grant ID or shadow state to synchronize.
