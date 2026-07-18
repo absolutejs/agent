@@ -5,6 +5,23 @@ const tool = toolFactory<never>();
 
 export const manifest = defineManifest<Record<string, never>, never>()({
   contract: 2,
+  discovery: {
+    audiences: ["agent-hosts", "application-developers"],
+    intents: [
+      "build an agent-first application",
+      "audit an agent stack",
+      "compose agent infrastructure",
+    ],
+    keywords: [
+      "agents",
+      "absolutejs",
+      "identity",
+      "orchestration",
+      "security",
+      "interoperability",
+    ],
+    protocols: ["OAuth 2.0", "MCP", "A2A 1.0", "Arazzo 1.1", "WebMCP"],
+  },
   identity: {
     accent: "#111827",
     category: "ai",
