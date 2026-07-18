@@ -15,7 +15,7 @@
         "@absolutejs/agent-runtime": "^0.1.0",
         "@absolutejs/agent-sandbox": "^0.1.0",
         "@absolutejs/agent-trust": "^0.1.0",
-        "@absolutejs/auth": "^0.56.6",
+        "@absolutejs/auth": "^0.56.7",
         "@absolutejs/execution": "^0.2.0",
         "@absolutejs/manifest": "^0.3.0",
         "@absolutejs/mcp": "^0.10.2",
@@ -51,7 +51,7 @@
 
     "@absolutejs/agent-trust": ["@absolutejs/agent-trust@0.1.0", "", { "dependencies": { "@absolutejs/manifest": "^0.2.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-SKtJI3L49hxL6WN6EwdtgFS5qnykOQwJidpGl9Qrz6MTzf39C6+O/prReeQTz0cP4tvztUE4L6GFtcsfgD+nog=="],
 
-    "@absolutejs/auth": ["@absolutejs/auth@0.56.6", "", { "dependencies": { "@absolutejs/linked-providers": "0.0.5", "@absolutejs/manifest": "^0.3.0", "@neondatabase/serverless": "1.0.0", "@sinclair/typebox": "^0.34.0", "citra": "0.29.7", "drizzle-orm": "1.0.0-rc.3" }, "peerDependencies": { "@node-saml/node-saml": ">=5", "@opentelemetry/api": ">=1.7", "@simplewebauthn/browser": ">=13", "@simplewebauthn/server": ">=13", "elysia": ">= 1.4.26", "react": ">=18 <20", "solid-js": ">=1.8", "svelte": ">=4", "vue": ">=3.4" }, "optionalPeers": ["@node-saml/node-saml", "@opentelemetry/api", "@simplewebauthn/browser", "@simplewebauthn/server", "react", "solid-js", "svelte", "vue"], "bin": { "absolute-auth": "dist/cli/migrate.js" } }, "sha512-/DzO6BkmbgxoMJ7YzCAvY0Nm0PI/F6XPZzmbljEpoJVWQ6GHtcrs+Oz7mnWTfhElrgxOCroRXSewtUAGPv/umg=="],
+    "@absolutejs/auth": ["@absolutejs/auth@0.56.7", "", { "dependencies": { "@absolutejs/linked-providers": "0.0.5", "@absolutejs/manifest": "^0.3.0", "@neondatabase/serverless": "1.0.0", "@sinclair/typebox": "^0.34.0", "citra": "0.29.7", "drizzle-orm": "1.0.0-rc.3" }, "peerDependencies": { "@node-saml/node-saml": ">=5", "@opentelemetry/api": ">=1.7", "@simplewebauthn/browser": ">=13", "@simplewebauthn/server": ">=13", "elysia": ">= 1.4.26", "react": ">=18 <20", "solid-js": ">=1.8", "svelte": ">=4", "vue": ">=3.4" }, "optionalPeers": ["@node-saml/node-saml", "@opentelemetry/api", "@simplewebauthn/browser", "@simplewebauthn/server", "react", "solid-js", "svelte", "vue"], "bin": { "absolute-auth": "dist/cli/migrate.js" } }, "sha512-PdHOojrniJnO/Q9eAEIs2aUsppApOQxw1NcLeFEMpf9nEbAusuZ+ET1QbpzmYK3TReZ+GA+7r9gy8ym2UL4dZQ=="],
 
     "@absolutejs/execution": ["@absolutejs/execution@0.2.0", "", { "dependencies": { "@absolutejs/manifest": "^0.2.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-EkUhLBf11L79E+pD0Gms9737P5XecUWM/l6E0rD5KZAfFc2qlzG2VpcFyahZigzvE0llG0nyo0R9jiQbBW2S0A=="],
 
