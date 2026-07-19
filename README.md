@@ -31,7 +31,7 @@ await assertProductionReady(stack); // fails until every production concern is w
 - `@absolutejs/agent/inbox` — verified webhooks, schedules, retries, dead letters
 - `@absolutejs/agent/discovery` — signed well-known documents, cards, text, sitemaps, registry
 - `@absolutejs/agent/execution` — transactional outbox, retries, reconciliation, compensation
-- `@absolutejs/agent/mcp` and `/a2a` — open interoperability transports
+- `@absolutejs/agent/mcp`, `/a2a`, and `/arazzo` — open interoperability and workflow transports
 - `@absolutejs/agent/policy` — versioned policy and AuthZEN adapters
 - `@absolutejs/agent/wallet` — reservations, idempotent settlement, spending policy
 - `@absolutejs/agent/control` — operator inventory, revoke, restore, kill switches

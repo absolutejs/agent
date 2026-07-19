@@ -1,5 +1,6 @@
 import { expect, test } from "bun:test";
 import { A2A_PROTOCOL_VERSION } from "../src/a2a";
+import { ARAZZO_VERSION } from "../src/arazzo";
 import {
   allowAllPolicy,
   createAuthAgencyDelegationAuthority,
@@ -20,6 +21,7 @@ import { createMemoryAgentWalletStore } from "../src/wallet";
 
 test("stable subpaths expose every agent engine", () => {
   expect(A2A_PROTOCOL_VERSION).toBe("1.0");
+  expect(ARAZZO_VERSION).toBe("1.1.0");
   expect(allowAllPolicy).toBeFunction();
   expect(createAuthAgencyDelegationAuthority).toBeFunction();
   expect(AGENT_CLAIM_GRANT_TYPE).toContain("agent-auth");
