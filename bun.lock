@@ -8,7 +8,7 @@
         "@absolutejs/a2a": "^0.2.4",
         "@absolutejs/agency": "^0.6.0",
         "@absolutejs/agent-conformance": "^0.4.1",
-        "@absolutejs/agent-control": "^0.4.1",
+        "@absolutejs/agent-control": "^0.4.2",
         "@absolutejs/agent-discovery": "^0.2.1",
         "@absolutejs/agent-inbox": "^0.1.1",
         "@absolutejs/agent-memory": "^0.1.1",
@@ -39,7 +39,7 @@
 
     "@absolutejs/agent-conformance": ["@absolutejs/agent-conformance@0.4.1", "", { "dependencies": { "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-G7R5hxPggoXNi52fsY6a8bQ2KX2IZ9bGiAsyTIDryb4j9eykgMXrXahyYvsIQVALDtougp5Wtkd/N6lrs5vM5A=="],
 
-    "@absolutejs/agent-control": ["@absolutejs/agent-control@0.4.1", "", { "dependencies": { "@absolutejs/agency": "^0.5.0", "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-xTGrP/weqAzUaUpO08c6/W44zav763VmpYnVhghgWV/0oiV01JY2ZHhCQJ6zN75HBdK1Q+tu+6M7FHFfTe3tFQ=="],
+    "@absolutejs/agent-control": ["@absolutejs/agent-control@0.4.2", "", { "dependencies": { "@absolutejs/agency": "^0.5.0", "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-XY55Wpb/49+zZfH4PsN7wwl3fS+FtUZMcok6KtwoRUALkXupOrqLpiF0bOMBF0uM1CUQzm5NLzYXZ0A2/1nQhA=="],
 
     "@absolutejs/agent-discovery": ["@absolutejs/agent-discovery@0.2.1", "", { "dependencies": { "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-xExsbBV5anGDhnsBkKRGDyELKnCN1XdrOieK2aGG5JgVkIwc18dRAFqElBdFPi/vSjCIhl3lx1X6R0rqex/m3A=="],
 
