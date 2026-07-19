@@ -18,6 +18,7 @@ import { createMemoryAgentRuntimeStore } from "../src/runtime";
 import { createMemoryAgentSandboxOperationStore } from "../src/sandbox";
 import { AGENT_ACTION_POLICY } from "../src/trust";
 import { createMemoryAgentWalletStore } from "../src/wallet";
+import { bootstrapWebMcpHttpActions } from "../src/webmcp";
 
 test("stable subpaths expose every agent engine", () => {
   expect(A2A_PROTOCOL_VERSION).toBe("1.0");
@@ -37,4 +38,5 @@ test("stable subpaths expose every agent engine", () => {
   expect(createMemoryAgentSandboxOperationStore).toBeFunction();
   expect(AGENT_ACTION_POLICY.allowedPurposes).toContain("tool-output");
   expect(createMemoryAgentWalletStore).toBeFunction();
+  expect(bootstrapWebMcpHttpActions).toBeFunction();
 });
