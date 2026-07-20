@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/agent",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "The production-grade, provider-neutral agent stack for AbsoluteJS: auth, actions, runtime, sandboxing, trust, memory, inbox, discovery, MCP, A2A, policy, wallet limits, controls, and conformance.",
   "type": "module",
   "license": "MIT",
@@ -133,7 +133,6 @@
   "dependencies": {
     "@absolutejs/a2a": "^0.3.0",
     "@absolutejs/agency": "^0.6.0",
-    "@absolutejs/arazzo": "^0.1.2",
     "@absolutejs/agent-conformance": "^0.4.1",
     "@absolutejs/agent-control": "^0.5.0",
     "@absolutejs/agent-discovery": "^0.2.1",
@@ -142,7 +141,8 @@
     "@absolutejs/agent-runtime": "^0.1.1",
     "@absolutejs/agent-sandbox": "^0.1.1",
     "@absolutejs/agent-trust": "^0.1.1",
-    "@absolutejs/auth": "^0.56.11",
+    "@absolutejs/arazzo": "^0.1.2",
+    "@absolutejs/auth": "^0.56.13",
     "@absolutejs/execution": "^0.2.0",
     "@absolutejs/manifest": "^0.3.0",
     "@absolutejs/mcp": "^0.11.0",
