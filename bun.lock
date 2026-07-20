@@ -17,7 +17,7 @@
         "@absolutejs/agent-trust": "^0.2.0",
         "@absolutejs/arazzo": "^0.1.2",
         "@absolutejs/auth": "^0.56.14",
-        "@absolutejs/execution": "^0.3.3",
+        "@absolutejs/execution": "^0.4.0",
         "@absolutejs/manifest": "^0.3.0",
         "@absolutejs/mcp": "^0.11.0",
         "@absolutejs/policy": "^0.2.0",
@@ -57,7 +57,7 @@
 
     "@absolutejs/auth": ["@absolutejs/auth@0.56.14", "", { "dependencies": { "@absolutejs/linked-providers": "0.0.5", "@absolutejs/manifest": "^0.3.0", "@neondatabase/serverless": "1.0.0", "@sinclair/typebox": "^0.34.0", "citra": "0.29.7", "drizzle-orm": "1.0.0-rc.4" }, "peerDependencies": { "@node-saml/node-saml": ">=5", "@opentelemetry/api": ">=1.7", "@simplewebauthn/browser": ">=13", "@simplewebauthn/server": ">=13", "elysia": ">= 1.4.26", "react": ">=18 <20", "solid-js": ">=1.8", "svelte": ">=4", "vue": ">=3.4" }, "optionalPeers": ["@node-saml/node-saml", "@opentelemetry/api", "@simplewebauthn/browser", "@simplewebauthn/server", "react", "solid-js", "svelte", "vue"], "bin": { "absolute-auth": "dist/cli/migrate.js" } }, "sha512-EHnqG0jrZLN30ecbDvyHRWlQ4wHYeQ2IWY1Ts+c0Ixy45umwlxAjHujBkXXyOief7KO6EDJoy+Ctxyw72XA32w=="],
 
-    "@absolutejs/execution": ["@absolutejs/execution@0.3.3", "", { "dependencies": { "@absolutejs/manifest": "^0.2.0", "@sinclair/typebox": "^0.34.0" }, "peerDependencies": { "@absolutejs/agent-runtime": ">=0.2.1 <0.3.0" } }, "sha512-fxWVj9kHh3NsGqEqMHooE3ZKZP82d0Kf5/fSwCXAtK/ufDJAfx6PuPlB4GG1FaH/yxfXvCliqtDHM8lN2hMjCA=="],
+    "@absolutejs/execution": ["@absolutejs/execution@0.4.0", "", { "dependencies": { "@absolutejs/manifest": "^0.2.0", "@sinclair/typebox": "^0.34.0" }, "peerDependencies": { "@absolutejs/agent-runtime": ">=0.2.1 <0.3.0" } }, "sha512-9ugHZuymFExv2uPr/6g08iH5fjir+Ea1qIuj+4HnrxhqlmLdLsA4iuiG9kpHr9RM/zZUX93pq+M+NANegw00PQ=="],
 
     "@absolutejs/linked-providers": ["@absolutejs/linked-providers@0.0.5", "", {}, "sha512-eFRurm91OnxWU31/Lyl/wzuiPpSHnzaz3+j7/o7GJLHJzEEveKMzGeA8Al6fy7gKQ+AmB86fwV5DRG1aKvDduQ=="],
 
