@@ -21,7 +21,7 @@
         "@absolutejs/manifest": "^0.3.0",
         "@absolutejs/mcp": "^0.11.0",
         "@absolutejs/policy": "^0.2.0",
-        "@absolutejs/wallet": "^0.5.0",
+        "@absolutejs/wallet": "^0.6.0",
         "@absolutejs/webmcp": "^0.1.3",
         "@sinclair/typebox": "^0.34.0",
       },
@@ -67,7 +67,7 @@
 
     "@absolutejs/policy": ["@absolutejs/policy@0.2.0", "", { "dependencies": { "@absolutejs/manifest": "^0.2.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-0VQ6x5SaP6PZV47CNgqQOkh0iIch/HPesXccLA0+RH/aYykj4fWrhX5SOaSdFWa9g39S5ZQ0LjOmLenEwmRRxw=="],
 
-    "@absolutejs/wallet": ["@absolutejs/wallet@0.5.0", "", { "dependencies": { "@absolutejs/agency": "^0.6.0", "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-HKyak1Yq4cfK/aEgxL7lzzvJyAk1TXxH7cvTF7uHgb9dzkv7vlsmJOQ5wINoU7mPiZIS+9PNxyj0cqMh/aZ1cg=="],
+    "@absolutejs/wallet": ["@absolutejs/wallet@0.6.0", "", { "dependencies": { "@absolutejs/agency": "^0.6.0", "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-Df6/HVhCw3ircW9Zenxc2MO3+FXPlMcz9fo9PXUVA7QOEi5rIZQ6chAZIDtUeuT7XHBLgJtkXeh8CNCDawuH7Q=="],
 
     "@absolutejs/webmcp": ["@absolutejs/webmcp@0.1.3", "", { "dependencies": { "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-Um5JrZRoBo07S1Vc9aEy3byrVR7xwVmIsHsMaxHSsbeIl+RP/9L3i38yFgqOB9qHWJPJsSlsjtkRKu+jFuCGWw=="],
 
