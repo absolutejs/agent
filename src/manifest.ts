@@ -26,7 +26,7 @@ export const manifest = defineManifest<Record<string, never>, never>()({
     accent: "#111827",
     category: "ai",
     description:
-      "The discoverable production agent stack for AbsoluteJS: auth.md identity and delegation, policy-gated actions, durable execution, sandboxing, trust, scoped memory, triggers, MCP, A2A, Arazzo, WebMCP, spend controls, operations, and conformance.",
+      "The discoverable production agent stack for AbsoluteJS: auth.md identity and delegation, policy-gated actions, certified tenant-scoped effect adapters, durable execution, sandboxing, trust, memory, triggers, MCP, A2A, Arazzo, WebMCP, spend controls, operations, and conformance.",
     docsUrl: "https://github.com/absolutejs/agent",
     name: "@absolutejs/agent",
     tagline: "Build agents that can safely act, persist, pay, and be found.",
