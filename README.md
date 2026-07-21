@@ -30,7 +30,7 @@ await assertProductionReady(stack); // fails until every production concern is w
 - `@absolutejs/agent/memory` — scoped, authorized, erasable durable memory
 - `@absolutejs/agent/inbox` — verified webhooks, schedules, retries, dead letters
 - `@absolutejs/agent/discovery` — signed well-known documents, cards, text, sitemaps, registry
-- `@absolutejs/agent/execution` — certified tenant adapter installations, transactional outbox, retries, reconciliation, compensation
+- `@absolutejs/agent/execution` — certified tenant adapter installations, transactional outbox, retries, signed provider evidence ingestion, reconciliation, compensation
 - `@absolutejs/agent/mcp`, `/a2a`, `/arazzo`, and `/webmcp` — open interoperability, workflow, and browser transports
 - `@absolutejs/agent/policy` — versioned policy and AuthZEN adapters
 - `@absolutejs/agent/wallet` — reservations, idempotent settlement, spending policy
