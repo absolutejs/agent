@@ -11,6 +11,7 @@ export const manifest = defineManifest<Record<string, never>, never>()({
       "build an agent-first application",
       "audit an agent stack",
       "compose agent infrastructure",
+      "orchestrate a durable agent purchase",
     ],
     keywords: [
       "agents",
@@ -19,6 +20,7 @@ export const manifest = defineManifest<Record<string, never>, never>()({
       "orchestration",
       "security",
       "interoperability",
+      "commerce",
     ],
     protocols: ["OAuth 2.0", "MCP", "A2A 1.0", "Arazzo 1.1", "WebMCP"],
   },

@@ -7,6 +7,7 @@ import {
 } from "../src/actions";
 import { AGENT_CLAIM_GRANT_TYPE } from "../src/auth";
 import { conformanceCatalog } from "../src/conformance";
+import { createMemoryAgentPurchaseIntentStore } from "../src/commerce";
 import { createMemoryOperationStore } from "../src/control";
 import { ABSOLUTE_AGENT_PATH } from "../src/discovery";
 import { createMemoryEffectStore } from "../src/execution";
@@ -27,6 +28,7 @@ test("stable subpaths expose every agent engine", () => {
   expect(createAuthAgencyDelegationAuthority).toBeFunction();
   expect(AGENT_CLAIM_GRANT_TYPE).toContain("agent-auth");
   expect(conformanceCatalog.length).toBeGreaterThan(0);
+  expect(createMemoryAgentPurchaseIntentStore).toBeFunction();
   expect(createMemoryOperationStore).toBeFunction();
   expect(ABSOLUTE_AGENT_PATH).toContain("well-known");
   expect(createMemoryEffectStore).toBeFunction();

@@ -3,6 +3,7 @@ export const AGENT_STACK_PACKAGES = {
   actions: "@absolutejs/agency",
   auth: "@absolutejs/auth",
   conformance: "@absolutejs/agent-conformance",
+  commerce: "@absolutejs/agent/commerce",
   control: "@absolutejs/agent-control",
   discovery: "@absolutejs/agent-discovery",
   execution: "@absolutejs/execution",
