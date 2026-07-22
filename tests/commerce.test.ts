@@ -99,6 +99,7 @@ describe("agent purchase orchestration", () => {
       await effectAdapterExecutionInputDigest(purchase.envelope),
     );
     expect(purchase.mandate?.cartHash).toBe(purchase.inputDigest);
+    expect(purchase.mandate).not.toHaveProperty("signature");
     expect(effect?.inputDigest).toBe(purchase.inputDigest);
     expect(events).toEqual([
       "mandate.request",

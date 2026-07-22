@@ -50,7 +50,7 @@ export type AgentPurchaseIntent<Payload = unknown> = {
   envelope: EffectAdapterExecutionEnvelope<Payload>;
   input: AgentPurchaseIntentInput<Payload>;
   inputDigest: string;
-  mandate?: SpendMandate;
+  mandate?: Omit<SpendMandate, "signature">;
   mandateId: string;
   status: AgentPurchaseIntentStatus;
   updatedAt: number;
@@ -273,9 +273,15 @@ export const createAgentPurchaseOrchestrator = (options: {
     status: AgentPurchaseIntentStatus,
     mandate?: SpendMandate,
   ) => {
+    let mandateSummary: Omit<SpendMandate, "signature"> | undefined;
+    if (mandate) {
+      const { signature, ...summary } = mandate;
+      void signature;
+      mandateSummary = summary;
+    }
     const next: AgentPurchaseIntent = {
       ...intent,
-      ...(mandate ? { mandate } : {}),
+      ...(mandateSummary ? { mandate: mandateSummary } : {}),
       status,
       updatedAt: now(),
     };
