@@ -37,6 +37,12 @@ export const manifest = defineManifest<Record<string, never>, never>()({
   tools: {
     inspect_agent_stack: tool.workspace({
       annotations: { readOnlyHint: true },
+      authorization: {
+        approval: "never",
+        audience: "admin",
+        effects: ["read"],
+        requiredScopes: ["agent-stack:inspect"],
+      },
       capabilities: ["read", "glob"],
       description:
         "Inspect an AbsoluteJS project for the production agent stack and report missing safety or discoverability packages.",
