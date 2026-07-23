@@ -12,6 +12,16 @@ import type {
   SpendRequestResult,
   SpendMandate,
 } from "@absolutejs/wallet";
+import { and, desc, eq, type SQL } from "drizzle-orm";
+import {
+  bigint,
+  customType,
+  index,
+  pgSchema,
+  text,
+  uniqueIndex,
+  type PgAsyncDatabase,
+} from "drizzle-orm/pg-core";
 
 export type AgentPurchaseIntentStatus =
   | "drafted"
@@ -136,6 +146,136 @@ const namespaceOf = (namespace: string) => {
       "Purchase intent namespace must be a simple identifier",
     );
   return namespace;
+};
+
+type AnyPgDatabase = PgAsyncDatabase<any, any>;
+const portableJsonb = customType<{ data: unknown; driverData: unknown }>({
+  dataType: () => "jsonb",
+  fromDriver: (value) =>
+    typeof value === "string" ? JSON.parse(value) : value,
+  toDriver: (value) => JSON.stringify(value),
+});
+
+export const agentPurchaseIntentDrizzleSchema = (
+  namespace = "agent_commerce",
+) => {
+  const schema = pgSchema(namespaceOf(namespace));
+  const purchaseIntents = schema.table(
+    "purchase_intents",
+    {
+      created_at: bigint({ mode: "number" }).notNull(),
+      data: portableJsonb().$type<AgentPurchaseIntent>().notNull(),
+      idempotency_key: text().notNull(),
+      input_digest: text().notNull(),
+      owner_id: text().notNull(),
+      purchase_id: text().primaryKey(),
+      status: text().$type<AgentPurchaseIntentStatus>().notNull(),
+      tenant_id: text().notNull(),
+      updated_at: bigint({ mode: "number" }).notNull(),
+    },
+    (table) => [
+      uniqueIndex("purchase_intents_tenant_idempotency_idx").on(
+        table.tenant_id,
+        table.idempotency_key,
+      ),
+      uniqueIndex("purchase_intents_tenant_purchase_idx").on(
+        table.tenant_id,
+        table.purchase_id,
+      ),
+      index("purchase_intents_inventory_idx").on(
+        table.tenant_id,
+        table.created_at.desc(),
+      ),
+      index("purchase_intents_owner_idx").on(
+        table.owner_id,
+        table.created_at.desc(),
+      ),
+    ],
+  );
+
+  return { purchaseIntents };
+};
+
+export const createDrizzleAgentPurchaseIntentStore = <DB extends AnyPgDatabase>(
+  db: DB,
+  options: { namespace?: string } = {},
+): AgentPurchaseIntentStore => {
+  const { purchaseIntents } = agentPurchaseIntentDrizzleSchema(
+    options.namespace,
+  );
+  const first = async (conditions: SQL[]) => {
+    const [row] = await db
+      .select({ data: purchaseIntents.data })
+      .from(purchaseIntents)
+      .where(and(...conditions))
+      .limit(1);
+
+    return row?.data;
+  };
+
+  return {
+    get: (tenantId, purchaseId) =>
+      first([
+        eq(purchaseIntents.tenant_id, tenantId),
+        eq(purchaseIntents.purchase_id, purchaseId),
+      ]),
+    getByIdempotencyKey: (tenantId, idempotencyKey) =>
+      first([
+        eq(purchaseIntents.tenant_id, tenantId),
+        eq(purchaseIntents.idempotency_key, idempotencyKey),
+      ]),
+    list: async (input) => {
+      const conditions: SQL[] = [];
+      if (input.tenantId)
+        conditions.push(eq(purchaseIntents.tenant_id, input.tenantId));
+      if (input.ownerId)
+        conditions.push(eq(purchaseIntents.owner_id, input.ownerId));
+      if (input.status)
+        conditions.push(eq(purchaseIntents.status, input.status));
+
+      const rows = await db
+        .select({ data: purchaseIntents.data })
+        .from(purchaseIntents)
+        .where(and(...conditions))
+        .orderBy(desc(purchaseIntents.created_at))
+        .limit(input.limit);
+
+      return rows.map(({ data }) => data);
+    },
+    save: async (intent) => {
+      const rows = await db
+        .insert(purchaseIntents)
+        .values({
+          created_at: intent.createdAt,
+          data: intent,
+          idempotency_key: intent.input.idempotencyKey,
+          input_digest: intent.inputDigest,
+          owner_id: intent.input.ownerId,
+          purchase_id: intent.input.purchaseId,
+          status: intent.status,
+          tenant_id: intent.input.tenantId,
+          updated_at: intent.updatedAt,
+        })
+        .onConflictDoUpdate({
+          set: {
+            data: intent,
+            status: intent.status,
+            updated_at: intent.updatedAt,
+          },
+          setWhere: and(
+            eq(purchaseIntents.tenant_id, intent.input.tenantId),
+            eq(purchaseIntents.input_digest, intent.inputDigest),
+            eq(purchaseIntents.idempotency_key, intent.input.idempotencyKey),
+          ),
+          target: purchaseIntents.purchase_id,
+        })
+        .returning({ id: purchaseIntents.purchase_id });
+      if (rows.length !== 1)
+        throw new AgentPurchaseIntentError(
+          "Purchase identity belongs to another immutable request",
+        );
+    },
+  };
 };
 
 export const agentPurchaseIntentsPostgresSchemaSql = (
