@@ -12,7 +12,7 @@ import type {
   SpendRequestResult,
   SpendMandate,
 } from "@absolutejs/wallet";
-import { and, desc, eq, type SQL } from "drizzle-orm";
+import { and, desc, eq, sql, type SQL } from "drizzle-orm";
 import {
   bigint,
   customType,
@@ -155,6 +155,8 @@ const portableJsonb = customType<{ data: unknown; driverData: unknown }>({
     typeof value === "string" ? JSON.parse(value) : value,
   toDriver: (value) => JSON.stringify(value),
 });
+const encodedJsonb = <Value>(value: Value) =>
+  sql<Value>`${JSON.stringify(value)}::text::jsonb`;
 
 export const agentPurchaseIntentDrizzleSchema = (
   namespace = "agent_commerce",
@@ -247,7 +249,7 @@ export const createDrizzleAgentPurchaseIntentStore = <DB extends AnyPgDatabase>(
         .insert(purchaseIntents)
         .values({
           created_at: intent.createdAt,
-          data: intent,
+          data: encodedJsonb(intent),
           idempotency_key: intent.input.idempotencyKey,
           input_digest: intent.inputDigest,
           owner_id: intent.input.ownerId,
@@ -258,7 +260,7 @@ export const createDrizzleAgentPurchaseIntentStore = <DB extends AnyPgDatabase>(
         })
         .onConflictDoUpdate({
           set: {
-            data: intent,
+            data: encodedJsonb(intent),
             status: intent.status,
             updated_at: intent.updatedAt,
           },
