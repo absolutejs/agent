@@ -2,6 +2,8 @@ import { describe, expect, test } from "bun:test";
 
 type PackageContract = {
   dependencies: Record<string, string>;
+  devDependencies: Record<string, string>;
+  peerDependencies: Record<string, string>;
 };
 
 const packageContract = (await Bun.file(
@@ -16,8 +18,8 @@ describe("Agent dependency ownership", () => {
     expect(packageContract.dependencies["@absolutejs/agent-control"]).toBe(
       "^0.5.6",
     );
-    expect(packageContract.dependencies["@absolutejs/auth"]).toBe("^0.57.2");
-    expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.6.3");
+    expect(packageContract.dependencies["@absolutejs/auth"]).toBe("^0.57.3");
+    expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.7.1");
     expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.11.3");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
     expect(packageContract.dependencies["@absolutejs/wallet"]).toBe("^0.9.3");
@@ -29,5 +31,16 @@ describe("Agent dependency ownership", () => {
     );
     expect([...versions]).toEqual(["0.7.1"]);
     expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/agency":/);
+  });
+
+  test("shares the nominal Execution runtime with facade consumers", () => {
+    expect(packageContract.dependencies["@absolutejs/execution"]).toBeUndefined();
+    expect(packageContract.devDependencies["@absolutejs/execution"]).toBe(
+      "0.14.5",
+    );
+    expect(packageContract.peerDependencies["@absolutejs/execution"]).toBe(
+      ">=0.14.5 <0.15",
+    );
+    expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/execution":/);
   });
 });
