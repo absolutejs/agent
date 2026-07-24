@@ -6,7 +6,7 @@
       "name": "@absolutejs/agent",
       "dependencies": {
         "@absolutejs/a2a": "^0.3.2",
-        "@absolutejs/agency": "^0.7.0",
+        "@absolutejs/agency": "^0.7.1",
         "@absolutejs/agent-conformance": "^0.14.0",
         "@absolutejs/agent-control": "^0.5.3",
         "@absolutejs/agent-discovery": "^0.2.1",
@@ -39,7 +39,7 @@
   "packages": {
     "@absolutejs/a2a": ["@absolutejs/a2a@0.3.2", "", { "dependencies": { "@absolutejs/agency": "^0.6.3", "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" }, "peerDependencies": { "drizzle-orm": ">=1.0.0-rc.4 <2" } }, "sha512-MnhkwAUeYtv4+rlyOjnOtLYzJdpj1Cm8X7TfKJroPXWi/GHRHa317qo74rjokww2RYV7Sl5vjsxXKPf9CzxH5w=="],
 
-    "@absolutejs/agency": ["@absolutejs/agency@0.7.0", "", { "dependencies": { "@absolutejs/manifest": "^0.4.0", "@sinclair/typebox": "^0.34.0" }, "peerDependencies": { "drizzle-orm": ">=1.0.0-rc.4 <2" } }, "sha512-3E2mzQiIPNIOQxB49GIteUhFR7HwZEwyvUGKVyrHnQV+gvnuuF/eqj/8PJvgukRB4R0sRxVe1a4OYkbZAPuA0w=="],
+    "@absolutejs/agency": ["@absolutejs/agency@0.7.1", "", { "dependencies": { "@absolutejs/manifest": "^0.4.0", "@sinclair/typebox": "^0.34.0" }, "peerDependencies": { "drizzle-orm": ">=1.0.0-rc.4 <2" } }, "sha512-JO083TLtpWlTE0CgtThdAs4ITxWACiUDJI5ZOC0c7zZuJAXm4rKE69Vr42g2xBZV0aZypP26UWpxpESxQeDvvw=="],
 
     "@absolutejs/agent-conformance": ["@absolutejs/agent-conformance@0.14.0", "", { "dependencies": { "@absolutejs/manifest": "^0.3.0", "@sinclair/typebox": "^0.34.0" } }, "sha512-kFRyRRPvfkJsDZ5oXwL027ZmaMIr3WQe3oKbg9P+e8YM8xtvy2ExRWt0eKVtCUqvGf7hVP72HvsBcLvt3b4B8A=="],
 
