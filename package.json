@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/agent",
-  "version": "0.23.12",
+  "version": "0.23.13",
   "description": "The production-grade, provider-neutral agent stack for AbsoluteJS: auth, actions, runtime, sandboxing, trust, memory, inbox, discovery, MCP, A2A, policy, wallet limits, controls, and conformance.",
   "type": "module",
   "license": "MIT",
