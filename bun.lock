@@ -25,14 +25,14 @@
         "@sinclair/typebox": "^0.34.0",
       },
       "devDependencies": {
-        "@absolutejs/execution": "0.14.5",
+        "@absolutejs/execution": "0.14.6",
         "@types/bun": "^1.3.14",
         "drizzle-orm": "1.0.0-rc.4",
         "prettier": "^3.8.3",
         "typescript": "^5.9.0",
       },
       "peerDependencies": {
-        "@absolutejs/execution": ">=0.14.5 <0.15",
+        "@absolutejs/execution": ">=0.14.6 <0.15",
         "drizzle-orm": ">=1.0.0-rc.4 <2",
       },
     },
@@ -62,7 +62,7 @@
 
     "@absolutejs/auth": ["@absolutejs/auth@0.57.3", "", { "dependencies": { "@absolutejs/linked-providers": "0.0.5", "@absolutejs/manifest": "^0.7.1", "@neondatabase/serverless": "1.0.0", "@sinclair/typebox": "^0.34.0", "citra": "0.29.7" }, "peerDependencies": { "@node-saml/node-saml": ">=5.1.0 <6", "@opentelemetry/api": ">=1.9.1 <2", "@simplewebauthn/browser": ">=13.3.0 <14", "@simplewebauthn/server": ">=13.3.2 <14", "drizzle-orm": ">=1.0.0-rc.4 <2", "elysia": ">=1.4.29 <2", "react": ">=18 <20", "solid-js": ">=1.9.14 <2", "svelte": ">=5.56.7 <6", "vue": ">=3.5.40 <4" }, "optionalPeers": ["@node-saml/node-saml", "@opentelemetry/api", "@simplewebauthn/browser", "@simplewebauthn/server", "react", "solid-js", "svelte", "vue"], "bin": { "absolute-auth": "dist/cli/migrate.js" } }, "sha512-PsKb6CebvKCYA0ZALLOBd2a4oZoX0KCP5Zf8iRmJoH8yQdH7h83BUDS7MyqeKYB+y1nPlT1PeURi4+Hp37o3TA=="],
 
-    "@absolutejs/execution": ["@absolutejs/execution@0.14.5", "", { "dependencies": { "@absolutejs/manifest": "^0.7.1", "@sinclair/typebox": "^0.34.0" }, "peerDependencies": { "@absolutejs/agent-runtime": ">=0.2.1 <0.3.0", "drizzle-orm": ">=1.0.0-rc.4 <2" } }, "sha512-xinaqATcrZqWCRTuA0wuUa9j5+FMwc3a8jf+eU1quEY700zJwnzdo18upaEk3a0A4swaksvxyHIxquCM+BYBxQ=="],
+    "@absolutejs/execution": ["@absolutejs/execution@0.14.6", "", { "dependencies": { "@absolutejs/manifest": "^0.7.1", "@sinclair/typebox": "^0.34.0" }, "peerDependencies": { "@absolutejs/agent-runtime": ">=0.2.1 <0.3.0", "drizzle-orm": ">=1.0.0-rc.4 <2" } }, "sha512-gLrCogPpeG9A6qKmbEKPezy6AvRwmV2r7Gr8ITbuOfLfGOgwo5MYj7ZmKyeFf5hof1vngUROqV6NLYQSXH5lqQ=="],
 
     "@absolutejs/linked-providers": ["@absolutejs/linked-providers@0.0.5", "", {}, "sha512-eFRurm91OnxWU31/Lyl/wzuiPpSHnzaz3+j7/o7GJLHJzEEveKMzGeA8Al6fy7gKQ+AmB86fwV5DRG1aKvDduQ=="],
 

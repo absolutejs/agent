@@ -14,6 +14,7 @@ import { createMemoryEffectStore } from "../src/execution";
 import { createMemoryAgentInboxStore } from "../src/inbox";
 import { createMcpHandler } from "../src/mcp";
 import { createMemoryAgentMemoryStore } from "../src/memory";
+import { agentPostgresMigrations } from "../src/migrations";
 import { createMemoryPolicyStore } from "../src/policy";
 import { createMemoryAgentRuntimeStore } from "../src/runtime";
 import { createMemoryAgentSandboxOperationStore } from "../src/sandbox";
@@ -35,6 +36,7 @@ test("stable subpaths expose every agent engine", () => {
   expect(createMemoryAgentInboxStore).toBeFunction();
   expect(createMcpHandler).toBeFunction();
   expect(createMemoryAgentMemoryStore).toBeFunction();
+  expect(agentPostgresMigrations).toBeFunction();
   expect(createMemoryPolicyStore).toBeFunction();
   expect(createMemoryAgentRuntimeStore).toBeFunction();
   expect(createMemoryAgentSandboxOperationStore).toBeFunction();

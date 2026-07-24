@@ -36,10 +36,10 @@ describe("Agent dependency ownership", () => {
   test("shares the nominal Execution runtime with facade consumers", () => {
     expect(packageContract.dependencies["@absolutejs/execution"]).toBeUndefined();
     expect(packageContract.devDependencies["@absolutejs/execution"]).toBe(
-      "0.14.5",
+      "0.14.6",
     );
     expect(packageContract.peerDependencies["@absolutejs/execution"]).toBe(
-      ">=0.14.5 <0.15",
+      ">=0.14.6 <0.15",
     );
     expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/execution":/);
   });
