@@ -7,6 +7,12 @@ independently installable and replaceable; this package provides one documented
 golden path, typed subpath exports, production-readiness checks, and an
 AbsoluteJS manifest that lets coding agents discover the whole stack.
 
+The facade is the single Agency runtime owner. A2A, MCP, Agent Control, Wallet,
+and other extensions declare Agency as a required peer, externalize it from
+their builds, and test a conservative compatibility window. The facade installs
+the matching real Agency dependency, so one application cannot silently create
+parallel action types or ledgers.
+
 ```ts
 import { assertProductionReady, defineAgentStack } from "@absolutejs/agent";
 import { createAgentRuntime } from "@absolutejs/agent/runtime";
