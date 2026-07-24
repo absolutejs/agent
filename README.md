@@ -23,7 +23,8 @@ await assertProductionReady(stack); // fails until every production concern is w
 ## Stable subpaths
 
 - `@absolutejs/agent/auth` — native auth.md registration, ID-JAG, scoped delegation
-- `@absolutejs/agent/actions` — approvals, leases, receipts, kill switches, handoffs
+- `@absolutejs/agent/actions` — terminal approvals/rejections, leases, receipts,
+  kill switches, handoffs
 - `@absolutejs/agent/runtime` — durable runs, checkpoints, budgets, effects
 - `@absolutejs/agent/sandbox` — deny-by-default HTTP, filesystem, and process grants
 - `@absolutejs/agent/trust` — provenance, taint propagation, safe context and sinks
