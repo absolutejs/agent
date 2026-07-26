@@ -33,6 +33,11 @@ export const manifest = defineManifest<Record<string, never>, never>()({
     name: "@absolutejs/agent",
     tagline: "Build agents that can safely act, persist, pay, and be found.",
   },
+  integration: {
+    description:
+      "The host must supply explicit identity, policy, durable stores, sandbox, signing, interoperability, spend, operations, and conformance components before defining the stack.",
+    mode: "code-first",
+  },
   settings: Type.Object({}),
   tools: {
     inspect_agent_stack: tool.workspace({
@@ -74,17 +79,5 @@ export const manifest = defineManifest<Record<string, never>, never>()({
       },
     }),
   },
-  wiring: [
-    {
-      description:
-        "Import the typed stack composer and add each production capability explicitly.",
-      id: "default",
-      server: {
-        code: "defineAgentStack([])",
-        imports: [{ from: "@absolutejs/agent", names: ["defineAgentStack"] }],
-        placement: "module-scope",
-      },
-      title: "Production agent stack",
-    },
-  ],
+  wiring: [],
 });
