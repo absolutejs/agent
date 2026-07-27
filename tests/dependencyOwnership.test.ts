@@ -18,7 +18,7 @@ describe("Agent dependency ownership", () => {
     expect(packageContract.dependencies["@absolutejs/agent-control"]).toBe(
       "^0.5.7",
     );
-    expect(packageContract.dependencies["@absolutejs/auth"]).toBe("^0.57.4");
+    expect(packageContract.dependencies["@absolutejs/auth"]).toBe("^0.57.6");
     expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.7.3");
     expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.11.3");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
@@ -37,7 +37,7 @@ describe("Agent dependency ownership", () => {
         (match) => match[1],
       ),
     );
-    expect([...authVersions]).toEqual(["0.57.4"]);
+    expect([...authVersions]).toEqual(["0.57.6"]);
     expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/auth":/);
   });
 
