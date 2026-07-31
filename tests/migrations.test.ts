@@ -69,3 +69,51 @@ describe("agent PostgreSQL migrations", () => {
     expect(database.statements).toContain("ROLLBACK");
   });
 });
+
+describe("module selection", () => {
+  test("omitting modules keeps the whole stack — the historical behaviour", () => {
+    const all = agentPostgresMigrations();
+    expect(all.length).toBeGreaterThan(0);
+    expect(new Set(all.map((m) => m.module)).has("wallet")).toBe(true);
+  });
+
+  test("selecting modules excludes everything else", () => {
+    const picked = agentPostgresMigrations(["agency", "mcp"]);
+    expect(new Set(picked.map((m) => m.module))).toEqual(
+      new Set(["agency", "mcp"]),
+    );
+    expect(picked.length).toBeLessThan(agentPostgresMigrations().length);
+  });
+
+  test("a host that skips wallet never creates its schema", async () => {
+    const harness = memoryClient();
+    await applyAgentPostgresMigrations(harness.client, {
+      modules: ["agency", "execution", "mcp"],
+    });
+    const sql = harness.statements.join("\n");
+
+    // The two objects that put a function and a constraint trigger into a
+    // database that never reads them.
+    expect(sql).not.toContain("assert_transaction_balanced");
+    expect(sql).not.toContain("wallet_entries_balanced");
+    expect(
+      [...harness.applied.keys()].some((id) => id.startsWith("wallet")),
+    ).toBe(false);
+  });
+
+  test("narrowing after a full apply leaves the journal intact", async () => {
+    const first = memoryClient();
+    await applyAgentPostgresMigrations(first.client);
+    const walletIds = [...first.applied.keys()].filter((id) =>
+      id.startsWith("wallet"),
+    );
+    expect(walletIds.length).toBeGreaterThan(0);
+
+    const second = memoryClient(first.applied);
+    const result = await applyAgentPostgresMigrations(second.client, {
+      modules: ["agency"],
+    });
+    expect(result.applied).toEqual([]);
+    for (const id of walletIds) expect(second.applied.has(id)).toBe(true);
+  });
+});
