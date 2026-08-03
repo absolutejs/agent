@@ -18,7 +18,6 @@ describe("Agent dependency ownership", () => {
     expect(packageContract.dependencies["@absolutejs/agent-control"]).toBe(
       "^0.5.7",
     );
-    expect(packageContract.dependencies["@absolutejs/auth"]).toBe("^0.57.6");
     expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.7.3");
     expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.11.3");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
@@ -31,17 +30,9 @@ describe("Agent dependency ownership", () => {
     );
     expect([...versions]).toEqual(["0.7.3"]);
     expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/agency":/);
-
-    const authVersions = new Set(
-      [...lock.matchAll(/@absolutejs\/auth@(\d+\.\d+\.\d+)/g)].map(
-        (match) => match[1],
-      ),
-    );
-    expect([...authVersions]).toEqual(["0.57.6"]);
-    expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/auth":/);
   });
 
-  test("shares the nominal Execution runtime with facade consumers", () => {
+  test("shares the nominal Execution and Auth runtimes with facade consumers", () => {
     expect(
       packageContract.dependencies["@absolutejs/execution"],
     ).toBeUndefined();
@@ -52,5 +43,12 @@ describe("Agent dependency ownership", () => {
       ">=0.14.6 <0.15",
     );
     expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/execution":/);
+
+    expect(packageContract.dependencies["@absolutejs/auth"]).toBeUndefined();
+    expect(packageContract.devDependencies["@absolutejs/auth"]).toBe("0.65.0");
+    expect(packageContract.peerDependencies["@absolutejs/auth"]).toBe(
+      ">=0.57.6 <1",
+    );
+    expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/auth":/);
   });
 });
