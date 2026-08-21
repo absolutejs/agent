@@ -18,8 +18,8 @@ describe("Agent dependency ownership", () => {
     expect(packageContract.dependencies["@absolutejs/agent-control"]).toBe(
       "^0.5.7",
     );
-    expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.7.3");
-    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.11.3");
+    expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.9.0");
+    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.12.0");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
     expect(packageContract.dependencies["@absolutejs/wallet"]).toBe("^0.9.3");
 

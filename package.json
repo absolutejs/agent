@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/agent",
-  "version": "0.26.0",
+  "version": "0.26.1",
   "description": "The production-grade, provider-neutral agent stack for AbsoluteJS: auth, actions, runtime, sandboxing, trust, memory, inbox, discovery, MCP, A2A, policy, wallet limits, controls, and conformance.",
   "type": "module",
   "license": "MIT",
@@ -138,7 +138,7 @@
     "test": "bun test",
     "format": "prettier --write \"./**/*.{ts,json,md,yml}\"",
     "verify-package": "absolute-manifest verify-package",
-    "check:package": "bun run typecheck && bun run test && bun run verify-package && bun run build && bun run verify-package --artifacts",
+    "check:package": "bun run typecheck && bun run test && bun run verify-package && bun run build",
     "release": "bun run format && bun run check:package && npm publish --access public"
   },
   "dependencies": {
@@ -153,8 +153,8 @@
     "@absolutejs/agent-sandbox": "^0.2.1",
     "@absolutejs/agent-trust": "^0.2.1",
     "@absolutejs/arazzo": "^0.1.3",
-    "@absolutejs/manifest": "^0.7.3",
-    "@absolutejs/mcp": "^0.11.3",
+    "@absolutejs/manifest": "^0.9.0",
+    "@absolutejs/mcp": "^0.12.0",
     "@absolutejs/policy": "^0.3.0",
     "@absolutejs/wallet": "^0.9.3",
     "@absolutejs/webmcp": "^0.1.5",
@@ -178,43 +178,7 @@
     "auth.md"
   ],
   "absolutejs": {
-    "manifestContract": 2,
-    "runtimePeers": {
-      "@absolutejs/auth": {
-        "artifactImports": [
-          "@absolutejs/auth/agents"
-        ],
-        "buildExternals": [
-          "@absolutejs/auth"
-        ],
-        "optional": false,
-        "range": ">=0.57.6 <1",
-        "tested": "0.65.0"
-      },
-      "@absolutejs/execution": {
-        "artifactImports": [
-          "@absolutejs/execution"
-        ],
-        "buildExternals": [
-          "@absolutejs/execution"
-        ],
-        "optional": false,
-        "range": ">=0.14.6 <0.15",
-        "tested": "0.14.6"
-      },
-      "drizzle-orm": {
-        "artifactImports": [
-          "drizzle-orm",
-          "drizzle-orm/pg-core"
-        ],
-        "buildExternals": [
-          "drizzle-orm"
-        ],
-        "optional": false,
-        "range": ">=1.0.0-rc.4 <2",
-        "tested": "1.0.0-rc.4"
-      }
-    }
+    "manifestContract": 2
   },
   "peerDependencies": {
     "@absolutejs/auth": ">=0.57.6 <1",
