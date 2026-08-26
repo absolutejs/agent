@@ -38,6 +38,7 @@ await assertProductionReady(stack); // fails until every production concern is w
 - `@absolutejs/agent/inbox` — verified webhooks, schedules, retries, dead letters
 - `@absolutejs/agent/discovery` — signed well-known documents, cards, text, sitemaps, registry
 - `@absolutejs/agent/execution` — certified tenant adapter installations, transactional outbox, retries, signed provider evidence ingestion, reconciliation, compensation
+- `@absolutejs/agent/exchange` — experimental, model-blind sensitive-value exchange with exact Agency approval, single-use leases, authenticated E2EE, replay defense, and redacted receipts
 - `@absolutejs/agent/mcp`, `/a2a`, `/arazzo`, and `/webmcp` — open interoperability, workflow, and browser transports
 - `@absolutejs/agent/policy` — versioned policy and AuthZEN adapters
 - `@absolutejs/agent/wallet` — reservations, idempotent settlement, spending policy

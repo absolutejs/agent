@@ -11,6 +11,7 @@ import { createMemoryAgentPurchaseIntentStore } from "../src/commerce";
 import { createMemoryOperationStore } from "../src/control";
 import { ABSOLUTE_AGENT_PATH } from "../src/discovery";
 import { createMemoryEffectStore } from "../src/execution";
+import { createAgentExchangeSender } from "../src/exchange";
 import { createMemoryAgentInboxStore } from "../src/inbox";
 import { createMcpHandler } from "../src/mcp";
 import { createMemoryAgentMemoryStore } from "../src/memory";
@@ -33,6 +34,7 @@ test("stable subpaths expose every agent engine", () => {
   expect(createMemoryOperationStore).toBeFunction();
   expect(ABSOLUTE_AGENT_PATH).toContain("well-known");
   expect(createMemoryEffectStore).toBeFunction();
+  expect(createAgentExchangeSender).toBeFunction();
   expect(createMemoryAgentInboxStore).toBeFunction();
   expect(createMcpHandler).toBeFunction();
   expect(createMemoryAgentMemoryStore).toBeFunction();

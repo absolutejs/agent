@@ -13,7 +13,7 @@ const lock = await Bun.file(new URL("../bun.lock", import.meta.url)).text();
 
 describe("Agent dependency ownership", () => {
   test("owns one Agency version for every peer-based extension", () => {
-    expect(packageContract.dependencies["@absolutejs/agency"]).toBe("^0.7.3");
+    expect(packageContract.dependencies["@absolutejs/agency"]).toBe("^0.7.4");
     expect(packageContract.dependencies["@absolutejs/a2a"]).toBe("^0.3.6");
     expect(packageContract.dependencies["@absolutejs/agent-control"]).toBe(
       "^0.5.7",
@@ -28,7 +28,7 @@ describe("Agent dependency ownership", () => {
         (match) => match[1],
       ),
     );
-    expect([...versions]).toEqual(["0.7.3"]);
+    expect([...versions]).toEqual(["0.7.4"]);
     expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/agency":/);
   });
 
