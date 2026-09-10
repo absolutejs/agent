@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "allowImportingTsExtensions": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "module": "Preserve",
     "moduleResolution": "Bundler",
     "noEmit": true,
@@ -9,7 +12,13 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
-    "types": ["bun"]
+    "types": [
+      "bun"
+    ]
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"]
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts",
+    "changelog/**/*"
+  ]
 }
