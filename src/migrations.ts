@@ -6,7 +6,7 @@ import { agentInboxPostgresSchemaSql } from "@absolutejs/agent-inbox";
 import { agentMemoryPostgresSchemaSql } from "@absolutejs/agent-memory";
 import { agentRuntimePostgresSchemaSql } from "@absolutejs/agent-runtime";
 import { executionPostgresMigrations } from "@absolutejs/execution";
-import { mcpPostgresSchemaSql } from "@absolutejs/mcp";
+import { mcpPostgresMigrations } from "@absolutejs/mcp";
 import {
   walletAgentTenantInventoryPostgresSchemaSql,
   walletPostgresSchemaSql,
@@ -94,13 +94,12 @@ const definitions = [
     packageVersion: "0.1.0",
     sql: agentInboxPostgresSchemaSql(),
   },
-  {
-    id: "mcp@0.10.1",
-    module: "mcp",
+  ...mcpPostgresMigrations().map((migration) => ({
+    ...migration,
+    module: "mcp" as const,
     packageName: "@absolutejs/mcp",
-    packageVersion: "0.10.1",
-    sql: mcpPostgresSchemaSql(),
-  },
+    packageVersion: migration.id.split("@").at(-1) ?? "unknown",
+  })),
   {
     id: "a2a@0.2.2",
     module: "a2a",

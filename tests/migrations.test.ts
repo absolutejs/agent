@@ -117,3 +117,17 @@ describe("module selection", () => {
     for (const id of walletIds) expect(second.applied.has(id)).toBe(true);
   });
 });
+
+test("existing MCP journal entries upgrade without changing their published digest", async () => {
+  const database = memoryClient(
+    new Map([
+      [
+        "mcp@0.10.1",
+        "1e1fc160ab7c5cf2747b963ae5d12198db5175300f6f89160d3d468f3a495280",
+      ],
+    ]),
+  );
+  expect(
+    await applyAgentPostgresMigrations(database.client, { modules: ["mcp"] }),
+  ).toEqual({ applied: ["mcp@0.17.0"], skipped: ["mcp@0.10.1"] });
+});

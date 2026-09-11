@@ -19,7 +19,7 @@ describe("Agent dependency ownership", () => {
       "^0.5.7",
     );
     expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.9.0");
-    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.16.0");
+    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.17.0");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
     expect(packageContract.dependencies["@absolutejs/wallet"]).toBe("^0.9.3");
 
@@ -63,4 +63,17 @@ test("MCP facade exports billing factories from the installed artifact", async (
   const mcp = await import("../src/mcp");
   expect(typeof mcp.createBillingReportTools).toBe("function");
   expect(typeof mcp.createBillingManagementTool).toBe("function");
+});
+
+test("MCP facade includes bundled billing Apps and immutable migrations", async () => {
+  const mcp = await import("../src/mcp");
+  const apps = mcp.createBillingApps();
+  expect(Object.keys(apps.resources)).toHaveLength(3);
+  expect(apps.resources["ui://absolute-billing/status.html"]?.html).toContain(
+    '<script type="module">',
+  );
+  expect(mcp.mcpPostgresMigrations().map((row) => row.id)).toEqual([
+    "mcp@0.10.1",
+    "mcp@0.17.0",
+  ]);
 });

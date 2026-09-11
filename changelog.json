@@ -3,6 +3,16 @@
   "name": "@absolutejs/agent",
   "releases": [
     {
+      "version": "0.29.6",
+      "date": "2026-09-11",
+      "changes": [
+        {
+          "kind": "added",
+          "summary": "Expose negotiated MCP Apps and bundled billing views, and consume immutable MCP session migrations"
+        }
+      ]
+    },
+    {
       "version": "0.29.5",
       "date": "2026-09-11",
       "changes": [
