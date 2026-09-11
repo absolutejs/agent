@@ -3,6 +3,16 @@
   "name": "@absolutejs/agent",
   "releases": [
     {
+      "version": "0.29.5",
+      "date": "2026-09-11",
+      "changes": [
+        {
+          "kind": "added",
+          "summary": "Expose account-bound MCP billing reports and host-policy-gated billing management links"
+        }
+      ]
+    },
+    {
       "version": "0.29.4",
       "date": "2026-09-11",
       "changes": [

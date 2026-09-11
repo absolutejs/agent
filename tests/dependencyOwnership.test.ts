@@ -19,7 +19,7 @@ describe("Agent dependency ownership", () => {
       "^0.5.7",
     );
     expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.9.0");
-    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.15.1");
+    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.16.0");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
     expect(packageContract.dependencies["@absolutejs/wallet"]).toBe("^0.9.3");
 
@@ -54,7 +54,13 @@ describe("Agent dependency ownership", () => {
 });
 
 test("MCP facade exports checkout factories from the installed artifact", async () => {
- const mcp = await import("../src/mcp");
- expect(typeof mcp.createCheckoutHandoffTool).toBe("function");
- expect(typeof mcp.createPurchaseStatusTool).toBe("function");
+  const mcp = await import("../src/mcp");
+  expect(typeof mcp.createCheckoutHandoffTool).toBe("function");
+  expect(typeof mcp.createPurchaseStatusTool).toBe("function");
+});
+
+test("MCP facade exports billing factories from the installed artifact", async () => {
+  const mcp = await import("../src/mcp");
+  expect(typeof mcp.createBillingReportTools).toBe("function");
+  expect(typeof mcp.createBillingManagementTool).toBe("function");
 });
