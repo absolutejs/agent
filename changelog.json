@@ -6,6 +6,16 @@
 			"changes": [
 				{
 					"kind": "added",
+					"summary": "Expose complete saved credit work responses through the MCP facade"
+				}
+			],
+			"date": "2026-09-13",
+			"version": "0.32.0"
+		},
+		{
+			"changes": [
+				{
+					"kind": "added",
 					"summary": "Expose action-specific review terms and per-action approval restrictions through the MCP facade"
 				}
 			],

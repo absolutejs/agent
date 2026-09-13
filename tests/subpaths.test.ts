@@ -13,7 +13,7 @@ import { ABSOLUTE_AGENT_PATH } from "../src/discovery";
 import { createMemoryEffectStore } from "../src/execution";
 import { createAgentExchangeSender } from "../src/exchange";
 import { createMemoryAgentInboxStore } from "../src/inbox";
-import { createMcpHandler } from "../src/mcp";
+import { createMcpHandler, createCreditWorkResult } from "../src/mcp";
 import { createMemoryAgentMemoryStore } from "../src/memory";
 import { agentPostgresMigrations } from "../src/migrations";
 import { createMemoryPolicyStore } from "../src/policy";
@@ -37,6 +37,14 @@ test("stable subpaths expose every agent engine", () => {
   expect(createAgentExchangeSender).toBeFunction();
   expect(createMemoryAgentInboxStore).toBeFunction();
   expect(createMcpHandler).toBeFunction();
+  expect(
+    createCreditWorkResult("work", {
+      budget: 1,
+      charged: 0,
+      status: "completed",
+      result: '{"actionId":"saved"}',
+    }),
+  ).toMatchObject({ structuredContent: { result: { actionId: "saved" } } });
   expect(createMemoryAgentMemoryStore).toBeFunction();
   expect(agentPostgresMigrations).toBeFunction();
   expect(createMemoryPolicyStore).toBeFunction();
