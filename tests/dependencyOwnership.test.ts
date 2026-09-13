@@ -19,7 +19,7 @@ describe("Agent dependency ownership", () => {
       "^0.5.7",
     );
     expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.9.0");
-    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.19.0");
+    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.20.0");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
     expect(packageContract.dependencies["@absolutejs/wallet"]).toBe("^0.9.3");
 
@@ -82,8 +82,10 @@ test("MCP facade exposes workflow tools and selection confirmation resources", a
   const mcp = await import("../src/mcp");
   expect(typeof mcp.createWorkflowTools).toBe("function");
   expect(typeof mcp.createSetupSelectionTools).toBe("function");
+  expect(typeof mcp.createActionWorkflowTools).toBe("function");
   expect(Object.keys(mcp.createWorkflowApps().resources)).toEqual([
     "ui://absolute-workflow/setup.html",
+    "ui://absolute-workflow/action.html",
     "ui://absolute-workflow/selection.html",
     "ui://absolute-workflow/preview.html",
   ]);
