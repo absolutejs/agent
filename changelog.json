@@ -5,6 +5,16 @@
 		{
 			"changes": [
 				{
+					"kind": "changed",
+					"summary": "Consume MCP 0.25.0 with background research estimates and safe admission guidance."
+				}
+			],
+			"date": "2026-09-13",
+			"version": "0.34.0"
+		},
+		{
+			"changes": [
+				{
 					"kind": "added",
 					"summary": "Expose published MCP background-work tools and checkpointed Execution steps; require Execution 0.14.8 for renewed queued effect leases."
 				}
