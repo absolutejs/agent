@@ -6,6 +6,16 @@
 			"changes": [
 				{
 					"kind": "changed",
+					"summary": "Consume MCP 0.26.0 registered-channel commerce policy for account-independent access."
+				}
+			],
+			"date": "2026-09-13",
+			"version": "0.35.0"
+		},
+		{
+			"changes": [
+				{
+					"kind": "changed",
 					"summary": "Consume MCP 0.25.0 with background research estimates and safe admission guidance."
 				}
 			],
