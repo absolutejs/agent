@@ -19,7 +19,7 @@ describe("Agent dependency ownership", () => {
       "^0.5.7",
     );
     expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.9.0");
-    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.23.0");
+    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.24.0");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
     expect(packageContract.dependencies["@absolutejs/wallet"]).toBe("^0.9.3");
 
@@ -37,10 +37,10 @@ describe("Agent dependency ownership", () => {
       packageContract.dependencies["@absolutejs/execution"],
     ).toBeUndefined();
     expect(packageContract.devDependencies["@absolutejs/execution"]).toBe(
-      "0.14.6",
+      "0.14.8",
     );
     expect(packageContract.peerDependencies["@absolutejs/execution"]).toBe(
-      ">=0.14.6 <0.15",
+      ">=0.14.8 <0.15",
     );
     expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/execution":/);
 
@@ -89,4 +89,12 @@ test("MCP facade exposes workflow tools and selection confirmation resources", a
     "ui://absolute-workflow/selection.html",
     "ui://absolute-workflow/preview.html",
   ]);
+});
+
+test("facades expose durable background work from published packages", async () => {
+  const mcp = await import("../src/mcp");
+  const execution = await import("../src/execution");
+  expect(typeof mcp.createBackgroundWorkTools).toBe("function");
+  expect(typeof mcp.createBackgroundWorkResult).toBe("function");
+  expect(typeof execution.runCheckpointedSteps).toBe("function");
 });

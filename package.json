@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/agent",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "description": "The production-grade, provider-neutral agent stack for AbsoluteJS: auth, actions, runtime, sandboxing, trust, memory, inbox, discovery, MCP, A2A, policy, wallet limits, controls, and conformance.",
   "type": "module",
   "license": "MIT",
@@ -163,7 +163,7 @@
     "@absolutejs/agent-trust": "^0.2.1",
     "@absolutejs/arazzo": "^0.1.3",
     "@absolutejs/manifest": "^0.9.0",
-    "@absolutejs/mcp": "^0.23.0",
+    "@absolutejs/mcp": "^0.24.0",
     "@absolutejs/policy": "^0.3.0",
     "@absolutejs/wallet": "^0.9.3",
     "@absolutejs/webmcp": "^0.1.5",
@@ -172,7 +172,7 @@
   "devDependencies": {
     "@absolutejs/auth": "0.65.0",
     "@absolutejs/changelog": "^0.6.0",
-    "@absolutejs/execution": "0.14.6",
+    "@absolutejs/execution": "0.14.8",
     "@types/bun": "^1.3.14",
     "drizzle-orm": "1.0.0-rc.4",
     "prettier": "^3.8.3",
@@ -192,7 +192,7 @@
   },
   "peerDependencies": {
     "@absolutejs/auth": ">=0.57.6 <1",
-    "@absolutejs/execution": ">=0.14.6 <0.15",
+    "@absolutejs/execution": ">=0.14.8 <0.15",
     "drizzle-orm": ">=1.0.0-rc.4 <2"
   }
 }

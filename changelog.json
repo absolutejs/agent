@@ -6,6 +6,16 @@
 			"changes": [
 				{
 					"kind": "added",
+					"summary": "Expose published MCP background-work tools and checkpointed Execution steps; require Execution 0.14.8 for renewed queued effect leases."
+				}
+			],
+			"date": "2026-09-13",
+			"version": "0.33.0"
+		},
+		{
+			"changes": [
+				{
+					"kind": "added",
 					"summary": "Expose complete saved credit work responses through the MCP facade"
 				}
 			],
