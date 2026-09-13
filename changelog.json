@@ -1,66 +1,76 @@
 {
-  "contract": 1,
-  "name": "@absolutejs/agent",
-  "releases": [
-    {
-      "version": "0.29.6",
-      "date": "2026-09-11",
-      "changes": [
-        {
-          "kind": "added",
-          "summary": "Expose negotiated MCP Apps and bundled billing views, and consume immutable MCP session migrations"
-        }
-      ]
-    },
-    {
-      "version": "0.29.5",
-      "date": "2026-09-11",
-      "changes": [
-        {
-          "kind": "added",
-          "summary": "Expose account-bound MCP billing reports and host-policy-gated billing management links"
-        }
-      ]
-    },
-    {
-      "version": "0.29.4",
-      "date": "2026-09-11",
-      "changes": [
-        {
-          "kind": "fixed",
-          "summary": "Consume rebuilt MCP checkout exports and verify the installed facade at runtime"
-        }
-      ]
-    },
-    {
-      "version": "0.29.3",
-      "date": "2026-09-11",
-      "changes": [
-        {
-          "kind": "added",
-          "summary": "Expose MCP credit checkout handoff and purchase recovery tools"
-        }
-      ]
-    },
-    {
-      "changes": [
-        {
-          "kind": "added",
-          "summary": "Expose budgeted MCP work envelopes through the agent umbrella"
-        }
-      ],
-      "date": "2026-09-11",
-      "version": "0.29.2"
-    },
-    {
-      "changes": [
-        {
-          "kind": "added",
-          "summary": "Expose MCP host commerce guards and credit balance tools through the agent umbrella"
-        }
-      ],
-      "date": "2026-09-11",
-      "version": "0.29.1"
-    }
-  ]
+	"contract": 1,
+	"name": "@absolutejs/agent",
+	"releases": [
+		{
+			"changes": [
+				{
+					"kind": "added",
+					"summary": "Expose shared MCP setup and budget-preview views through the agent umbrella"
+				}
+			],
+			"date": "2026-09-13",
+			"version": "0.29.7"
+		},
+		{
+			"changes": [
+				{
+					"kind": "added",
+					"summary": "Expose negotiated MCP Apps and bundled billing views, and consume immutable MCP session migrations"
+				}
+			],
+			"date": "2026-09-11",
+			"version": "0.29.6"
+		},
+		{
+			"changes": [
+				{
+					"kind": "added",
+					"summary": "Expose account-bound MCP billing reports and host-policy-gated billing management links"
+				}
+			],
+			"date": "2026-09-11",
+			"version": "0.29.5"
+		},
+		{
+			"changes": [
+				{
+					"kind": "fixed",
+					"summary": "Consume rebuilt MCP checkout exports and verify the installed facade at runtime"
+				}
+			],
+			"date": "2026-09-11",
+			"version": "0.29.4"
+		},
+		{
+			"changes": [
+				{
+					"kind": "added",
+					"summary": "Expose MCP credit checkout handoff and purchase recovery tools"
+				}
+			],
+			"date": "2026-09-11",
+			"version": "0.29.3"
+		},
+		{
+			"changes": [
+				{
+					"kind": "added",
+					"summary": "Expose budgeted MCP work envelopes through the agent umbrella"
+				}
+			],
+			"date": "2026-09-11",
+			"version": "0.29.2"
+		},
+		{
+			"changes": [
+				{
+					"kind": "added",
+					"summary": "Expose MCP host commerce guards and credit balance tools through the agent umbrella"
+				}
+			],
+			"date": "2026-09-11",
+			"version": "0.29.1"
+		}
+	]
 }

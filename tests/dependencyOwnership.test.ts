@@ -19,7 +19,7 @@ describe("Agent dependency ownership", () => {
       "^0.5.7",
     );
     expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.9.0");
-    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.17.0");
+    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.18.0");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
     expect(packageContract.dependencies["@absolutejs/wallet"]).toBe("^0.9.3");
 
@@ -75,5 +75,14 @@ test("MCP facade includes bundled billing Apps and immutable migrations", async 
   expect(mcp.mcpPostgresMigrations().map((row) => row.id)).toEqual([
     "mcp@0.10.1",
     "mcp@0.17.0",
+  ]);
+});
+
+test("MCP facade exposes workflow tools and both offline resources", async () => {
+  const mcp = await import("../src/mcp");
+  expect(typeof mcp.createWorkflowTools).toBe("function");
+  expect(Object.keys(mcp.createWorkflowApps().resources)).toEqual([
+    "ui://absolute-workflow/setup.html",
+    "ui://absolute-workflow/preview.html",
   ]);
 });
