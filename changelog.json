@@ -5,6 +5,16 @@
 		{
 			"changes": [
 				{
+					"kind": "fixed",
+					"summary": "Consume MCP 0.20.1 so read-only reviews cannot display approval controls."
+				}
+			],
+			"date": "2026-09-13",
+			"version": "0.29.10"
+		},
+		{
+			"changes": [
+				{
 					"kind": "changed",
 					"summary": "Consume MCP 0.20.0 reviewed outbound actions and durable job recovery views."
 				}
