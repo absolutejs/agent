@@ -3,6 +3,16 @@
 	"name": "@absolutejs/agent",
 	"releases": [
 		{
+			"version": "0.37.0",
+			"date": "2026-10-20",
+			"changes": [
+				{
+					"kind": "changed",
+					"summary": "Consume published MCP 0.30 so commerce review reminders no longer expire service access, with explicit revocation and overdue audit metadata."
+				}
+			]
+		},
+		{
 			"changes": [
 				{
 					"kind": "changed",
