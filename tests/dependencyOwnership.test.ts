@@ -19,7 +19,7 @@ describe("Agent dependency ownership", () => {
       "^0.5.7",
     );
     expect(packageContract.dependencies["@absolutejs/manifest"]).toBe("^0.9.0");
-    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.26.0");
+    expect(packageContract.dependencies["@absolutejs/mcp"]).toBe("^0.29.0");
     expect(packageContract.dependencies["@absolutejs/policy"]).toBe("^0.3.0");
     expect(packageContract.dependencies["@absolutejs/wallet"]).toBe("^0.9.3");
 
@@ -37,10 +37,10 @@ describe("Agent dependency ownership", () => {
       packageContract.dependencies["@absolutejs/execution"],
     ).toBeUndefined();
     expect(packageContract.devDependencies["@absolutejs/execution"]).toBe(
-      "0.14.8",
+      "0.14.10",
     );
     expect(packageContract.peerDependencies["@absolutejs/execution"]).toBe(
-      ">=0.14.8 <0.15",
+      ">=0.14.10 <0.15",
     );
     expect(lock).not.toMatch(/"[^"]+\/@absolutejs\/execution":/);
 

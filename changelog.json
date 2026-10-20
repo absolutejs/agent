@@ -6,6 +6,16 @@
 			"changes": [
 				{
 					"kind": "changed",
+					"summary": "Consume published MCP 0.29 automatic budgeting and Execution 0.14.10 checkpoint continuation through existing facade exports"
+				}
+			],
+			"date": "2026-10-20",
+			"version": "0.36.0"
+		},
+		{
+			"changes": [
+				{
+					"kind": "changed",
 					"summary": "Consume MCP 0.26.0 registered-channel commerce policy for account-independent access."
 				}
 			],
